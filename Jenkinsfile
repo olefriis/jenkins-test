@@ -27,13 +27,18 @@ pipeline {
           steps {
             dir(path: 'pipeline') {
               sh 'git status'
+              sh 'find .'
             }
             
           }
         }
         stage('Status Frontend') {
           steps {
-            sh 'cd frontend; git status'
+            dir(path: 'frontend') {
+              sh 'git status'
+              sh 'find'
+            }
+            
           }
         }
       }
