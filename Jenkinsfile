@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        junit 'reports/**/*.xml'
+        sh 'git status'
       }
     }
     stage('Deploy') {
