@@ -10,7 +10,10 @@ pipeline {
         }
         stage('Checkout Pipeline') {
           steps {
-            git(url: 'git@github.com:christoflemke/build-test.git', branch: 'pipeline', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
+            ws(dir: 'pipeline') {
+              git(url: 'git@github.com:christoflemke/build-test.git', branch: 'pipeline', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
+            }
+            
           }
         }
       }
