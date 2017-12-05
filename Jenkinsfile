@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Checkout Pipeline') {
           steps {
-            ws(dir: 'pipeline') {
+            dir(path: 'pipeline') {
               git(url: 'git@github.com:christoflemke/build-test.git', branch: 'pipeline', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
             }
             
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Checkout Frontend') {
           steps {
-            ws(dir: 'frontend') {
+            dir(path: 'frontend') {
               git(url: 'git@github.com:christoflemke/build-test.git', branch: 'frontend', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
             }
             
