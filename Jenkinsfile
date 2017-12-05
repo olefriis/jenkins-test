@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'make publish'
+        input(message: 'Hi', id: 'id-hi', ok: 'Ja', submitter: 'me', submitterParameter: 'foo')
       }
     }
   }
