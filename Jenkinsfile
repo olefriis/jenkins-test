@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Pipeline') {
+    stage('Checkout') {
       parallel {
         stage('Checkout Pipeline') {
           steps {
@@ -23,14 +23,14 @@ pipeline {
     }
     stage('Test') {
       parallel {
-        stage('Test') {
+        stage('Status Pipeline') {
           steps {
-            sh 'git status'
+            sh 'cd pipeline; git status'
           }
         }
-        stage('status2') {
+        stage('Status Frontend') {
           steps {
-            sh 'git status'
+            sh 'cd frontend; git status'
           }
         }
       }
