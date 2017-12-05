@@ -22,7 +22,7 @@ pipeline {
             sh 'git status'
           }
         }
-        stage('') {
+        stage('status2') {
           steps {
             sh 'git status'
           }
