@@ -1,15 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Checkout') {
       steps {
-        sh 'make'
         git(url: 'git@github.com:christoflemke/build-test.git', branch: 'master', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
       }
     }
     stage('Test') {
       steps {
-        sh 'make check'
         junit 'reports/**/*.xml'
       }
     }
