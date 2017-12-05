@@ -31,12 +31,12 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        input(message: 'Hi', id: 'id-hi', ok: 'Alt er godt!')
+        input(message: 'Hi', id: 'id-hi', ok: 'Ja', submitter: 'me', submitterParameter: 'foo')
       }
     }
     stage('Done') {
       steps {
-        sh 'echo hi'
+        sh 'find .'
       }
     }
   }
