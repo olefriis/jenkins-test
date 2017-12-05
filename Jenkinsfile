@@ -34,7 +34,7 @@ pipeline {
         input(message: 'Hi', id: 'id-hi', ok: 'Ja', submitter: 'me', submitterParameter: 'foo')
       }
     }
-    stage('') {
+    stage('Done') {
       steps {
         sh 'echo hi'
       }
