@@ -25,7 +25,10 @@ pipeline {
       parallel {
         stage('Status Pipeline') {
           steps {
-            sh 'cd pipeline; git status'
+            dir(path: 'pipeline') {
+              sh 'git status'
+            }
+            
           }
         }
         stage('Status Frontend') {
