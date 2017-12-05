@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        input(message: 'Hi', id: 'id-hi', ok: 'Ja', submitter: 'me', submitterParameter: 'foo')
+        input(message: 'Hi', id: 'id-hi', ok: 'Ja')
       }
     }
     stage('Done') {
