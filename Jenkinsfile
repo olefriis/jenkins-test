@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout Frontend') {
           steps {
             ws(dir: 'frontend') {
-              git(url: 'git@github.com:christoflemke/build-test.git', branch: 'frontemd', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
+              git(url: 'git@github.com:christoflemke/build-test.git', branch: 'frontend', changelog: true, credentialsId: 'jenkins-test-repo', poll: true)
             }
             
           }
